@@ -1,0 +1,39 @@
+<table class="table table-striped table-bordered">
+  <tr>
+    <td>acceleration</td>
+    <td id="moAccel"></td>
+  </tr>
+  <tr>
+    <td>gyro</td>
+    <td id="moRotation"></td>
+  </tr>
+</table>
+
+<script>
+if ('DeviceMotionEvent' in window) {
+  var onDeviceMotion = function (eventData) {
+    accelerationHandler(eventData.acceleration);
+    rotationHandler(eventData.rotationRate);
+  }
+  window.addEventListener('devicemotion', onDeviceMotion, false);
+}
+
+function accelerationHandler(acceleration) {
+  var info = "[X, Y, Z]";
+
+  info = info.replace("X", acceleration.x.toFixed(9));
+  info = info.replace("Y", acceleration.y.toFixed(9));
+  info = info.replace("Z", acceleration.z.toFixed(9));
+  document.getElementById("moAccel").innerHTML = info;
+}
+
+function rotationHandler(rotation) {
+  var info = "[X, Y, Z]";
+
+  info = info.replace("X",rotation.alpha.toFixed(9));
+  info = info.replace("Y",rotation.beta.toFixed(9));
+  info = info.replace("Z",rotation.gamma.toFixed(9));
+  document.getElementById("moRotation").innerHTML = info;
+}
+
+</script>

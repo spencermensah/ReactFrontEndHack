@@ -1,0 +1,20 @@
+.parallax {
+    height: 200px;
+
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.leftbtm{
+  width: 75px;
+}
+
+.rightbtm{
+  width: 75px;
+}
+
+h1{
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+}
